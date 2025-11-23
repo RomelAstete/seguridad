@@ -1,0 +1,182 @@
+/* styles.css — ultra moderno, armonioso con la foto */
+:root{
+  --accent:#0d6efd;
+  --bg:#f6f7fb;
+  --card-shadow: 0 8px 24px rgba(18,24,33,0.06);
+}
+
+*{box-sizing:border-box}
+body{
+  background: var(--bg);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#111;
+  scroll-behavior:smooth;
+}
+
+.navbar-brand i{ margin-right:6px; }
+/* Tema "hacker" - negro + verde neón */
+:root{
+  --bg: #0b0f0b;
+  --card: #0f1410;
+  --muted: #9aa39a;
+  --neon: #39ff14;
+  --accent: rgba(57,255,20,0.08);
+}
+
+*{box-sizing: border-box}
+
+body{
+  background: linear-gradient(180deg,#071009 0%, #0b0f0b 100%);
+  color: #dfeee1;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  padding-top: 70px;
+}
+
+/* Navbar */
+.nav-hacker {
+  background: linear-gradient(90deg, rgba(0,0,0,0.85), rgba(5,10,5,0.85));
+  border-bottom: 1px solid rgba(57,255,20,0.06);
+}
+.nav-hacker .navbar-brand { color: var(--neon); letter-spacing: 0.6px; }
+.nav-hacker .nav-link { color: #bcd9b0; }
+.nav-hacker .nav-link:hover { color: var(--neon); transform: translateY(-1px); }
+
+/* Carousel */
+.hero-img { max-height: 300px; object-fit: cover; filter: brightness(.65); }
+.caption-hacker h2{ color: var(--neon); font-weight:700; }
+.caption-hacker p{ color: #d3f3c9; }
+
+/* Cards */
+.card {
+  background: linear-gradient(180deg, rgba(20,28,18,0.6), rgba(10,14,10,0.6));
+  border: 1px solid rgba(57,255,20,0.06);
+  color: #e6f8e6;
+  border-radius: 12px;
+}
+.card .feature-box i { color: var(--neon); }
+
+/* Buttons neon */
+.btn-neon {
+  background: linear-gradient(90deg, rgba(57,255,20,0.14), rgba(57,255,20,0.08));
+  color: var(--neon);
+  border: 1px solid rgba(57,255,20,0.18);
+  box-shadow: 0 6px 18px rgba(57,255,20,0.04);
+}
+.btn-outline-neon {
+  color: var(--neon);
+  border: 1px solid rgba(57,255,20,0.14);
+  background: transparent;
+}
+
+/* Code output style */
+.code-output {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(0,0,0,0.35);
+  color: var(--neon);
+  border: 1px solid rgba(57,255,20,0.08);
+}
+
+/* progress bar */
+.progress { background: rgba(255,255,255,0.03); border-radius: 8px; overflow: hidden; }
+.progress-bar { transition: width .4s ease; }
+
+/* model image */
+.model-img { max-width: 220px; border: 1px solid rgba(255,255,255,0.04); }
+
+/* small utilities */
+.feature-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.02); }
+a { text-decoration: none; color: var(--neon); }
+a:hover { text-decoration: underline; color: #b7ff7a; }
+
+/* responsive tweaks */
+@media (max-width: 991px){
+  .hero-img { max-height: 360px; }
+  .model-img { max-width: 160px; }
+}
+
+.hero{
+  background: linear-gradient(90deg, rgba(13,110,253,0.92), rgba(34,197,94,0.8));
+  min-height: 340px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-bottom-left-radius:18px;
+  border-bottom-right-radius:18px;
+}
+
+.card{
+  border-radius:12px;
+  box-shadow: var(--card-shadow);
+}
+
+.card img{ max-height:220px; object-fit:cover; }
+
+a{ color:var(--accent); }
+a:hover{ text-decoration:underline; }
+
+.progress-bar{ transition: width .25s ease; }
+.btn-primary{ background:var(--accent); border:0; }
+
+@media (max-width:991px){
+  .hero{ padding:70px 1.5rem; }
+}
+/* Estilo principal del título */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #00eaff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff;
+    margin-bottom: 20px;
+}
+
+/* Efecto glitch */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    overflow: hidden;
+    color: #00eaff;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c8;
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #6400ff;
+    animation: glitch-anim2 2.5s infinite linear alternate-reverse;
+}
+
+/* Animaciones glitch */
+@keyframes glitch-anim {
+    0% { clip-path: inset(0 0 80% 0); }
+    20% { clip-path: inset(10% 0 20% 0); }
+    40% { clip-path: inset(40% 0 40% 0); }
+    60% { clip-path: inset(60% 0 20% 0); }
+    80% { clip-path: inset(30% 0 50% 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip-path: inset(80% 0 0 0); }
+    20% { clip-path: inset(20% 0 10% 0); }
+    40% { clip-path: inset(40% 0 40% 0); }
+    60% { clip-path: inset(10% 0 60% 0); }
+    80% { clip-path: inset(50% 0 30% 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
